@@ -3,8 +3,9 @@
 import { motion } from "framer-motion"
 import {useRouter } from "next/navigation"
 import Link from "next/link"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
+import axios from "axios";
 
 const links = ["About", "Projects", "Contact"]
 
@@ -12,6 +13,21 @@ export default function Navbar({ className }: { className?: string }) {
 
   const [menuOpen, setMenuOpen] = useState(false)
   const router = useRouter()
+
+  const getPorjects = async () => {
+    try {
+      const res = await axios.post("https://api.github.com/users/Dnyanesh6/repos")
+      console.log(res.data)
+
+      return res.data;
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getPorjects()
+  })
 
   return (
     <motion.nav

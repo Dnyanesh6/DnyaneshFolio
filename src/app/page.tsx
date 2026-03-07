@@ -1,12 +1,9 @@
 "use client"
-import Container from "@/src/components/container"
-import Navbar from "@/src/components/navbar"
+// import { useRouter } from 'next/navigation'
+import {redirect } from 'next/navigation'
 export default function Home() {
-  return (
-    
 
-    <Container>
-      <Navbar className=""/>
-    </Container>
+  return (
+    redirect('/hero')
   );
 }

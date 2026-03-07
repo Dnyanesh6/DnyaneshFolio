@@ -54,7 +54,7 @@ export default function Navbar({ className }: { className?: string }) {
         </div>
 
         {/* DESKTOP LINKS */}
-        <div className="hidden md:flex gap-10 text-white items-center">
+        <div className="hidden md:flex gap-4 text-white items-center">
 
           {links.map((link, index) => (
             <Link
@@ -68,7 +68,7 @@ export default function Navbar({ className }: { className?: string }) {
 
           {/* CV BUTTON */}
           <a
-            href="/DC_resume.pdf"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-800 hover:from-zinc-700 hover:via-zinc-800 hover:to-zinc-900 transition"

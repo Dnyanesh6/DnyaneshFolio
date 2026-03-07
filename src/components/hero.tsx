@@ -28,7 +28,7 @@ function Hero() {
         </h1>
 
         <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-          Hi, I&apos;m Dnyanesh — a full-stack developer focused on building
+          Hi, I&apos;m Dnyanesh a full-stack developer focused on building
           modern applications using React, Next.js, and backend systems.
         </p>
 

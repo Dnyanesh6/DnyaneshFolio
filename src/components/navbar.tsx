@@ -1,11 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import {useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
-import { Menu, Target, X } from "lucide-react"
-import axios from "axios";
+import { Menu, X } from "lucide-react"
+import axios from "axios"
 
 const links = ["About", "Projects", "Contact"]
 
@@ -14,46 +14,48 @@ export default function Navbar({ className }: { className?: string }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const router = useRouter()
 
-  const getPorjects = async () => {
+  const getProjects = async () => {
     try {
-      const res = await axios.post("https://api.github.com/users/Dnyanesh6/repos")
+      const res = await axios.get("https://api.github.com/users/Dnyanesh6/repos")
       console.log(res.data)
-
-      return res.data;
     } catch (error) {
       console.log(error)
     }
   }
 
   useEffect(() => {
-    getPorjects()
-  })
+    getProjects()
+  }, [])
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      className={`w-full md:w--full flex justify-center gap-40 bg-red- items-center px-4 ${className}`}
+      transition={{ duration: 0.4 }}
+      className={`w-full flex justify-center px-4 ${className}`}
     >
-      <div className="w-full md:w-3/4 max-w-6xl h-16 flex justify-between bg-zinc-800 rounded-2xl drop-shadow-lg  items-center px-4">
 
-        {/* LEFT SECTION */}
-        <div 
-        onClick={()=>{router.push('/Hero')}}
-        className="flex items-center gap-2 cursor-pointer">
+      <div className="w-full md:w-3/4 max-w-6xl h-16 flex justify-between items-center bg-zinc-800 rounded-2xl px-4 shadow-lg">
+
+        {/* LEFT */}
+        <div
+          onClick={() => router.push("/")}
+          className="flex items-center gap-3 cursor-pointer"
+        >
           <img
-            className="w-10 h-10 transition rounded-full"
+            className="w-10 h-10 rounded-full"
             src="/passport.jpeg"
             alt="profile"
           />
+
           <span className="hidden sm:block text-white font-bold text-lg">
             Dnyanesh Chaudhari
           </span>
         </div>
 
         {/* DESKTOP LINKS */}
-        <div className="hidden md:flex gap-14 text-white">
+        <div className="hidden md:flex gap-10 text-white items-center">
+
           {links.map((link, index) => (
             <Link
               key={index}
@@ -63,48 +65,60 @@ export default function Navbar({ className }: { className?: string }) {
               {link}
             </Link>
           ))}
+
+          {/* CV BUTTON */}
+          <a
+            href="/DC_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-800 hover:from-zinc-700 hover:via-zinc-800 hover:to-zinc-900 transition"
+          >
+            Download CV
+          </a>
+
         </div>
 
-
         {/* MOBILE MENU BUTTON */}
-        <div className="md:hidden text-white focus:outline-none">
+        <div className="md:hidden text-white">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
+
       </div>
 
-      
-        <a
-        href="/DC_resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-        className=" py-4 text-md bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-800 text-white px-4 py-2 rounded-lg hover:from-zinc-700 hover:text-neutral-300 hover:via-zinc-800 hover:to-zinc-900 transition duration-300 "
-        >
-          Download CV
-        </a>
-        
-      
-      {/* MOBILE DROPDOWN */}
+      {/* MOBILE MENU */}
       {menuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-20 w-[90%] bg-neutral-700 rounded-xl flex flex-col items-center md:hidden mt-2"
+          className="absolute top-20 w-[90%] max-w-md bg-zinc-800 rounded-xl flex flex-col items-center md:hidden p-4"
         >
+
           {links.map((link, index) => (
             <Link
               key={index}
               href={`/${link.toLowerCase()}`}
-              className="w-full text-center py-4 m-2 rounded-lg text-white border-b border-neutral-600"
+              className="w-full text-center py-3 text-white border-b border-zinc-700"
               onClick={() => setMenuOpen(false)}
             >
               {link}
             </Link>
-            
           ))}
+
+          {/* CV BUTTON MOBILE */}
+          <a
+            href="/DC_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 w-full text-center px-4 py-3 rounded-lg bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-800 text-white"
+          >
+            Download CV
+          </a>
+
         </motion.div>
       )}
+
     </motion.nav>
   )
 }

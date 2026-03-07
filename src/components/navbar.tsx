@@ -108,7 +108,7 @@ export default function Navbar({ className }: { className?: string }) {
 
           {/* CV BUTTON MOBILE */}
           <a
-            href="/DC_resume.pdf"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 w-full text-center px-4 py-3 rounded-lg bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-800 text-white"

@@ -38,7 +38,7 @@ export default function Navbar({ className }: { className?: string }) {
             <Link
               key={index}
               href={`/${link.toLowerCase()}`}
-              className="hover:text-gray-300 transition"
+              className="hover:text-neutral-300 transition"
             >
               {link}
             </Link>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import {useRouter } from "next/navigation"
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, Target, X } from "lucide-react"
 import axios from "axios";
 
 const links = ["About", "Projects", "Contact"]
@@ -75,11 +75,14 @@ export default function Navbar({ className }: { className?: string }) {
       </div>
 
       
-        <button
+        <a
+        href="/DC_resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
         className=" py-4 text-md bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-800 text-white px-4 py-2 rounded-lg hover:from-zinc-700 hover:text-neutral-300 hover:via-zinc-800 hover:to-zinc-900 transition duration-300 "
         >
           Download CV
-        </button>
+        </a>
         
       
       {/* MOBILE DROPDOWN */}

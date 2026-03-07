@@ -15,7 +15,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background:#262626;
+    --background:#171717;
     --foreground:#FFFFFF;
     --color-navbar: var(--background);
   }

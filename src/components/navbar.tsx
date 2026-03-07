@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import {useRouter } from "next/navigation"
 import Link from "next/link"
 import React, { useState } from "react"
 import { Menu, X } from "lucide-react"
@@ -10,40 +11,44 @@ const links = ["About", "Projects", "Contact"]
 export default function Navbar({ className }: { className?: string }) {
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const router = useRouter()
 
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`w-full flex justify-center items-center px-4 ${className}`}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className={`w-full md:w--full flex justify-center gap-40 bg-red- items-center px-4 ${className}`}
     >
-      <div className="w-full max-w-6xl h-16 flex justify-between bg-neutral-700 rounded-2xl drop-shadow-lg border border-neutral-300 items-center px-4">
+      <div className="w-full md:w-3/4 max-w-6xl h-16 flex justify-between bg-zinc-800 rounded-2xl drop-shadow-lg  items-center px-4">
 
         {/* LEFT SECTION */}
-        <div className="flex items-center gap-2">
+        <div 
+        onClick={()=>{router.push('/Hero')}}
+        className="flex items-center gap-2 cursor-pointer">
           <img
-            className="w-9 h-9 rounded-full"
+            className="w-10 h-10 transition rounded-full"
             src="/passport.jpeg"
             alt="profile"
           />
-          <span className="hidden sm:block text-white font-medium">
+          <span className="hidden sm:block text-white font-bold text-lg">
             Dnyanesh Chaudhari
           </span>
         </div>
 
         {/* DESKTOP LINKS */}
-        <div className="hidden md:flex gap-6 text-white">
+        <div className="hidden md:flex gap-14 text-white">
           {links.map((link, index) => (
             <Link
               key={index}
               href={`/${link.toLowerCase()}`}
-              className="hover:text-neutral-300 transition"
+              className="hover:text-neutral-300 text-lg transition"
             >
               {link}
             </Link>
           ))}
         </div>
+
 
         {/* MOBILE MENU BUTTON */}
         <div className="md:hidden text-white focus:outline-none">
@@ -53,6 +58,14 @@ export default function Navbar({ className }: { className?: string }) {
         </div>
       </div>
 
+      
+        <button
+        className=" py-4 text-md bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-800 text-white px-4 py-2 rounded-lg hover:from-zinc-700 hover:text-neutral-300 hover:via-zinc-800 hover:to-zinc-900 transition duration-300 "
+        >
+          Download CV
+        </button>
+        
+      
       {/* MOBILE DROPDOWN */}
       {menuOpen && (
         <motion.div
@@ -69,6 +82,7 @@ export default function Navbar({ className }: { className?: string }) {
             >
               {link}
             </Link>
+            
           ))}
         </motion.div>
       )}

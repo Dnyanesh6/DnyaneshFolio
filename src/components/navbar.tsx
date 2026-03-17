@@ -39,7 +39,7 @@ export default function Navbar({ className }: { className?: string }) {
 
         {/* LEFT */}
         <div
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/Hero")}
           className="flex items-center gap-3 cursor-pointer"
         >
           <img
@@ -57,21 +57,21 @@ export default function Navbar({ className }: { className?: string }) {
         <div className="hidden md:flex gap-4 text-white items-center">
 
           {links.map((link, index) => (
-            <motion.div 
-            className="hover:bg-teal-50/10 p-2 rounded-lg"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 10 }}
-            key={index}>
-            <Link
-              href={`/${link.toLowerCase()}`}
-              onClick={() => router.push(`/${link.toLowerCase()}`)}
-              className="hover:text-neutral-300  text-lg transition"
+            <Link key={index} href={`/${link}`}>
+    
+            <motion.div
+              className="group hover:bg-teal-50/10 p-2 rounded-lg cursor-pointer"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
             >
+            <span className="group-hover:text-neutral-300 text-lg transition">
               {link}
-            </Link>
+            </span>
             </motion.div>
-          ))}
+
+            </Link>
+))}
 
           {/* CV BUTTON */}
           <a
@@ -105,7 +105,7 @@ export default function Navbar({ className }: { className?: string }) {
           {links.map((link, index) => (
             <Link
               key={index}
-              href={`/${link.toLowerCase()}`}
+              href={`/${link}`}
               className="w-full text-center py-3 tracking-tight text-sm text-white border-b border-zinc-700"
               onClick={() => setMenuOpen(false)}
             >

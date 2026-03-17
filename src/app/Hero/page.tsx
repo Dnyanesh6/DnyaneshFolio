@@ -4,6 +4,7 @@ import Hero from "@/src/components/hero"
 import Container from "@/src/components/container"
 import Navbar from "@/src/components/navbar"
 import { motion } from 'framer-motion'
+import Footer from '@/src/components/footer'
 function hero() {
   return (
     <section>
@@ -17,6 +18,7 @@ function hero() {
     <Hero />
     </motion.div>
     </Container>
+    <Footer />
     </section>
   )
 }

@@ -11,14 +11,14 @@ function footer({ className }: { className?: string }) {
     <div className='flex justify-center items-center mb-16 mt-8'>
         <footer className="bg-neutral-900 text-white py-4 px-4 sm:px-6 lg:px-8 ">
             <div 
-            onClick={() => router.push("/")}
-            className="container mx-auto text-center cursor-pointer flex flex-row items-center gap-4">
+            onClick={() => router.push("/Hero")}
+            className="container mx-auto text-center p-4 cursor-pointer flex flex-row items-center gap-4">
                 <img src="/passport.jpeg" className='size-12 rounded-full' alt="Profile image" />
                 <p 
-                className='font-semibold text-md '>Dnyanesh chaudhari</p>
+                className='font-semibold text-xl  '>Dnyanesh chaudhari</p>
             </div>
 
-            <div className="hidden md:flex gap-4 mt-4 text-white items-center">
+            <div className="hidden md:flex gap-4 mt-4 text-white md:items-center md:justify-center">
 
           {links.map((link, index) => (
             <motion.div 
@@ -28,8 +28,8 @@ function footer({ className }: { className?: string }) {
             exit={{ opacity: 0, x: 10 }}
             key={index}>
             <Link
-              href={`/${link.toLowerCase()}`}
-              onClick={() => router.push(`/${link.toLowerCase()}`)}
+              href={`/${link}`}
+              onClick={() => router.push(`/${link}`)}
               className="hover:text-neutral-300  text-lg transition"
             >
               {link}
@@ -38,7 +38,7 @@ function footer({ className }: { className?: string }) {
           ))}
           </div>
 
-          <div className="mt-4 flex gap-6 justify-center  ">
+          <div className="mt-4 flex gap-10 justify-center  ">
             {/* //linkedin */}
             <a className="hover:scale-110 transition-transform hover:color-teal-400" href="https://www.linkedin.com/in/dnyanesh-chaudhari-48942328a/" target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>

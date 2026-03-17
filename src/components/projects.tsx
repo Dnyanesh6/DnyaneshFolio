@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { Github } from "lucide-react"
 
 const projects = [
   {
@@ -17,7 +18,8 @@ const projects = [
       "A personal developer portfolio built with Next.js and Tailwind CSS to showcase projects, skills, and technical work.",
     image: "/projects/portfolio.png",
     tech: ["Next.js", "Tailwind", "TypeScript", "React"],
-    github: "https://github.com/Dnyanesh6/DnyaneshFolio"
+    github: "https://github.com/Dnyanesh6/DnyaneshFolio",
+    liveLink: "https://dnyanesh-one.vercel.app/"
   },
   
 ]
@@ -76,9 +78,18 @@ export default function Projects() {
                 href={project.github}
                 className="inline-block hover:text-teal-400 mt-6   text-sm"
               >
-                View Source →
+                <Github className="hover:text-teal-400 transition" />
               </a>
 
+              {project.liveLink && (
+                <a
+                  href={project.liveLink}
+                  className="inline-block flex justify-center items-center hover:text-teal-400 mt-6 ml-4 text-sm"
+                >
+                  Live Demo
+                </a>
+
+              )}
             </div>
           </div>
         ))}

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useRouter } from "next/navigation"
+import { useRouter, redirect } from "next/navigation"
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
@@ -57,13 +57,20 @@ export default function Navbar({ className }: { className?: string }) {
         <div className="hidden md:flex gap-4 text-white items-center">
 
           {links.map((link, index) => (
+            <motion.div 
+            className="hover:bg-teal-50/10 p-2 rounded-lg"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 10 }}
+            key={index}>
             <Link
-              key={index}
               href={`/${link.toLowerCase()}`}
-              className="hover:text-neutral-300 text-lg transition"
+              onClick={() => router.push(`/${link.toLowerCase()}`)}
+              className="hover:text-neutral-300  text-lg transition"
             >
               {link}
             </Link>
+            </motion.div>
           ))}
 
           {/* CV BUTTON */}
@@ -99,7 +106,7 @@ export default function Navbar({ className }: { className?: string }) {
             <Link
               key={index}
               href={`/${link.toLowerCase()}`}
-              className="w-full text-center py-3 text-white border-b border-zinc-700"
+              className="w-full text-center py-3 tracking-tight text-sm text-white border-b border-zinc-700"
               onClick={() => setMenuOpen(false)}
             >
               {link}

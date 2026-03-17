@@ -24,7 +24,7 @@ function Hero() {
       <section className="flex flex-col gap-6 max-w-3xl">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
           I&apos;m a developer who loves solving complex problems with{" "}
-          <span className="text-blue-400">code</span>.
+          <span className="text-teal-400">code</span>.
         </h1>
 
         <p className="text-neutral-400 text-sm md:text-base leading-relaxed">

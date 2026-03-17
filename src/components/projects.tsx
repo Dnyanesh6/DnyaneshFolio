@@ -74,7 +74,7 @@ export default function Projects() {
               {/* Link */}
               <a
                 href={project.github}
-                className="inline-block hover:text-blue-400 mt-6   text-sm"
+                className="inline-block hover:text-teal-400 mt-6   text-sm"
               >
                 View Source →
               </a>

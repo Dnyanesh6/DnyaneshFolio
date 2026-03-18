@@ -58,18 +58,17 @@ export default function Navbar({ className }: { className?: string }) {
 
           {links.map((link, index) => (
             <motion.div 
-            className="hover:bg-teal-50/10 p-2 rounded-lg"
+            className="hover:bg-teal-50/10 p-2 cursor-pointer rounded-lg"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
             key={index}>
-            <Link
-              href={`/${link}`}
+            <div
               onClick={() => router.push(`/${link}`)}
               className="hover:text-neutral-300  text-lg transition"
             >
               {link}
-            </Link>
+            </div>
             </motion.div>
           ))}
 
@@ -103,14 +102,16 @@ export default function Navbar({ className }: { className?: string }) {
         >
 
           {links.map((link, index) => (
-            <Link
+            <div
               key={index}
-              href={`/${link}`}
               className="w-full text-center py-3 tracking-tight text-sm text-white border-b border-zinc-700"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                router.push(`/${link}`);
+                setMenuOpen(false);
+              }}
             >
               {link}
-            </Link>
+            </div>
           ))}
 
           {/* CV BUTTON MOBILE */}

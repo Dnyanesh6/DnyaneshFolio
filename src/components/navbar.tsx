@@ -63,12 +63,12 @@ export default function Navbar({ className }: { className?: string }) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
             key={index}>
-            <div
-              onClick={() => router.push(`/${link}`)}
+            <Link
+            href={`/${link}`}
               className="hover:text-neutral-300  text-lg transition"
             >
               {link}
-            </div>
+            </Link>
             </motion.div>
           ))}
 

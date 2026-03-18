@@ -74,6 +74,7 @@ export default function Projects() {
               </div>
 
               {/* Link */}
+              <div className="flex  items-center">
               <a
                 href={project.github}
                 className="inline-block hover:text-teal-400 mt-6   text-sm"
@@ -88,8 +89,8 @@ export default function Projects() {
                 >
                   Live Demo
                 </a>
-
               )}
+            </div>
             </div>
           </div>
         ))}

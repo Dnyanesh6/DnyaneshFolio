@@ -98,7 +98,7 @@ export default function Navbar({ className }: { className?: string }) {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-20 w-[90%] max-w-md bg-zinc-800 rounded-xl flex flex-col items-center md:hidden p-4"
+          className="absolute top-20 mt-4 w-[90%] max-w-md bg-zinc-800 rounded-xl flex flex-col items-center md:hidden p-4"
         >
 
           {links.map((link, index) => (

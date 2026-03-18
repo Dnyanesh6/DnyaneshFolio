@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
-import About from "@/src/components/about"
+import Projects from '@/src/components/projects'
 import Container from "@/src/components/container"
 import Navbar from "@/src/components/navbar"
-import Footer from "@/src/components/footer"
 import { motion, useScroll } from 'framer-motion'
-function AboutPage() {
+import Footer from '@/src/components/footer'
+
+function ProjectsPage() {
 
   const { scrollYProgress } = useScroll()
 
@@ -29,7 +30,7 @@ function AboutPage() {
 
       <Container>
         <Navbar />
-        <About />
+        <Projects />
       </Container>
 
       <Footer />
@@ -37,4 +38,4 @@ function AboutPage() {
   )
 }
 
-export default AboutPage
+export default ProjectsPage

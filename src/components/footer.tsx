@@ -12,7 +12,7 @@ function footer({ className }: { className?: string }) {
     <div className='flex justify-center items-center mb-16 mt-8'>
         <footer className="bg-neutral-900 text-white py-4 px-4 sm:px-6 lg:px-8 ">
             <div 
-            onClick={() => router.push("/Hero")}
+            onClick={() => router.push("/hero")}
             className="container mx-auto text-center p-4 cursor-pointer flex flex-row items-center gap-4">
                 <img src="/passport.jpeg" className='size-12 rounded-full' alt="Profile image" />
                 <p 
@@ -30,7 +30,7 @@ function footer({ className }: { className?: string }) {
             key={index}>
             <Link
               href={`/${link}`}
-              onClick={() => router.push(`/${link}`)}
+              onClick={() => router.push(`/${link.toLowerCase()}`)}
               className="hover:text-neutral-300  text-lg transition"
             >
               {link}

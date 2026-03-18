@@ -39,7 +39,7 @@ export default function Navbar({ className }: { className?: string }) {
 
         {/* LEFT */}
         <div
-          onClick={() => router.push("/Hero")}
+          onClick={() => router.push("/hero")}
           className="flex items-center gap-3 cursor-pointer"
         >
           <img
@@ -64,7 +64,7 @@ export default function Navbar({ className }: { className?: string }) {
             exit={{ opacity: 0, x: 10 }}
             key={index}>
             <div
-              onClick={() => router.push(`/${link}`)}
+              onClick={() => router.push(`/${link.toLowerCase()}`)}
               className="hover:text-neutral-300  text-lg transition"
             >
               {link}

@@ -9,7 +9,7 @@ const links = ["About", "Projects", "Contact"]
 function footer({ className }: { className?: string }) {
   const router = useRouter()
   return (
-    <div className='flex justify-center items-center mb-16 mt-8'>
+    <div className='flex justify-center items-center w-full'>
         <footer className="bg-neutral-900 text-white py-4 px-4 sm:px-6 lg:px-8 ">
             <div 
             onClick={() => router.push("/Hero")}

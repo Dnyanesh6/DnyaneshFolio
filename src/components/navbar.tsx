@@ -39,7 +39,7 @@ export default function Navbar({ className }: { className?: string }) {
 
         {/* LEFT */}
         <div
-          onClick={() => router.push("/hero")}
+          onClick={() => router.push("/")}
           className="flex items-center gap-3 cursor-pointer"
         >
           <img

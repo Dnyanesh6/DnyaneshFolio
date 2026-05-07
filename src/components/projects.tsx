@@ -28,7 +28,7 @@ const projects = [
     image: "/projects/trello.png",
     tech: ["HTML", "JavaScript", "Express", "MongoDB"],
     github: "https://github.com/Dnyanesh6/Trello-board",
-    liveLink: "https://trello-board-1-f9zi.onrender.com/dashboard.html"
+    liveLink: "https://trello-board-1-f9zi.onrender.com"
   }
 ]
 

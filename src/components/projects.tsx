@@ -25,7 +25,7 @@ const projects = [
     title: "Trello Board",
     description:
       "A Trello-inspired project management app where organizations can create boards, manage issues, and track tasks across workflow stages like Todo, In Progress, and Done",
-    image: "/projects/portfolio.png",
+    image: "/projects/trello.png",
     tech: ["HTML", "JavaScript", "Express", "MongoDB"],
     github: "https://github.com/Dnyanesh6/Trello-board",
     liveLink: "https://trello-board-1-f9zi.onrender.com/dashboard.html"

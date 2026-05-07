@@ -29,11 +29,11 @@ function HeroPage() {
       />
 
       <Container>
-        <Navbar />
+        {/* <Navbar /> */}
         <Hero />
       </Container>
 
-      <Footer />
+      {/* <Footer /> */}
     </section>
   )
 }

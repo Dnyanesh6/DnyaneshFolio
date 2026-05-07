@@ -32,7 +32,7 @@ export default function Navbar({ className }: { className?: string }) {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className={`w-full flex justify-center px-4 ${className}`}
+      className={`w-full flex justify-center my-4 px-4 ${className}`}
     >
 
       <div className="w-full md:w-3/4 max-w-6xl h-16 flex justify-between items-center bg-zinc-800 rounded-2xl px-4 shadow-lg">

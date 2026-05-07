@@ -29,11 +29,9 @@ function ProjectsPage() {
       />
 
       <Container>
-        <Navbar />
         <Projects />
       </Container>
 
-      <Footer />
     </section>
   )
 }

@@ -28,7 +28,7 @@ function AboutPage() {
       />
 
       <Container className='flex-grow'>
-        <Navbar />
+        {/* <Navbar /> */}
         <Contact />
         <Footer />
       </Container>

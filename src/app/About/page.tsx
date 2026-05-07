@@ -28,7 +28,6 @@ function AboutPage() {
       />
 
       <Container>
-        <Navbar />
         <About />
       </Container>
 

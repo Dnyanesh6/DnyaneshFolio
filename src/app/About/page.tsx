@@ -31,7 +31,6 @@ function AboutPage() {
         <About />
       </Container>
 
-      <Footer />
     </section>
   )
 }
